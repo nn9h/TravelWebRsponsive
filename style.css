@@ -30,6 +30,101 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  width: 100vw;
+  height: 100vh;
+  background-color: #757171bf;
+}
+
+#loader .box-trash {
+  height: 200px;
+  width: 300px;
+  background-color: var(--main-color);
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+#loader .box-trash .img-box {
+  padding-left: 30px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#loader .box-trash .img-box, #loader .box-trash h4 {
+  /* display: none; */
+}
+
+#loader .box-trash h3 {
+  text-align: center;
+  font-size: 40px;
+  margin-top: 40px;
+  padding: 10px;
+  display: none;
+}
+
+#loader .box-trash .img-box img {
+  height: 140px;
+  width: 140px;
+}
+
+#loader .box-trash .img-box img#trash {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+}
+
+#loader .box-trash h4 {
+  text-align: center;
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  top: 30%;
+  left: 36%;
+  display: none;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: var(--secondary-color) transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 header {
   width: 100%;
   position: fixed;
@@ -146,7 +241,7 @@ header .icon:hover > i {
   color: var(--main-color);
 }
 
-header .nav_icon i {
+header .nav_icon > i {
   color: black;
   display: inline-block;
 }
@@ -164,14 +259,18 @@ header .search-box {
   width: 240px;
   height: 50px;
   padding: 0 10px;
-  justify-content: space-between;
   border-radius: 10px;
   background-color: var(--main-color);
   border: solid 5px var(--secondary-color);
   transform: translateY(-250px);
   transition: 0.4s;
-
 }
+
+header .search-box i {
+  position: absolute;
+  right: 10px;
+}
+
 
 header .search-box.hide {
   transform: translateY(0);
@@ -275,6 +374,7 @@ header .menu_icon {
   font-size: 24px;
   position: absolute;
   color: var(--blur-color);
+  pointer-events: none;
 }
 
 #banner button {
@@ -712,6 +812,7 @@ header .menu_icon {
 
 #banner_video {
   margin-top: var(--margin-section);
+  width: 100%;
 }
 
 #article_tip {
