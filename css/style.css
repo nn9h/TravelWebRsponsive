@@ -59,10 +59,6 @@ body {
   align-items: center;
 }
 
-#loader .box-trash .img-box, #loader .box-trash h4 {
-  /* display: none; */
-}
-
 #loader .box-trash h3 {
   text-align: center;
   font-size: 40px;
@@ -134,7 +130,9 @@ header {
 
 header.sticky {
   background-color: var(--sub-color);
-  padding: 6px 0;
+  padding: 4px 0;
+  top: 0;
+  left: 0;
 }
 
 .header_wr , .nav_header, .nav_text, .nav_icon {
@@ -271,7 +269,6 @@ header .search-box i {
   right: 10px;
 }
 
-
 header .search-box.hide {
   transform: translateY(0);
 }
@@ -289,10 +286,14 @@ header .menu_icon {
   font-size: 30px;
 }
 
+.mg-header {
+  padding-top: 74px !important;
+}
+
 #banner {
   width: 100%;
   height: 120vh;
-  background: url("./images/banner-1.jpg") no-repeat center center / cover;
+  background: url("../images/banner-1.jpg") no-repeat center center / cover;
   color: var(--main-color);
 }
 
@@ -1397,5 +1398,10 @@ footer .col-4 .informations span {
 
   footer .col-4, footer .col-2 {
     padding-left: 0;
+  }
+
+  footer .col-3 .gallery-wr {
+    grid-template-columns: repeat(3, auto);
+    gap: 8px; 
   }
 }

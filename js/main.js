@@ -1,10 +1,12 @@
 // Toggle header when scroll
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
-    if(window.scrollY > 100){
-        header.classList.add('sticky');
-    } else {
-        header.classList.remove('sticky');
+    if(window.location.href === 'http://127.0.0.1:5500/index.html'){
+        if(window.scrollY > 100){
+            header.classList.add('sticky');
+        } else {
+            header.classList.remove('sticky');
+        }
     }
 })
 
@@ -37,7 +39,7 @@ document.addEventListener('click', function(event) {
     }
 });
 
-// Drag / Drop
+// Drag / Drop Desktop screen
 const trashItem = document.querySelector('#trash');
 const trashBin = document.querySelector('.trash-bin-box');
 const noneDropF = document.querySelector('.box-trash .img-box');
@@ -65,8 +67,14 @@ trashBin.addEventListener('drop', e => {
         setTimeout(() => {
             loaderWr.style.display = 'none';
         }, 1000)
-    }, 3000)
+    }, 2000)
 })
+
+// Drag / Drop Mobile screen
+const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+if (isTouchDevice) {
+    loaderWr.style.display = 'none';
+}
 
 
 
