@@ -1,7 +1,8 @@
 // Toggle header when scroll
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
-    if(window.location.href === 'http://127.0.0.1:5500/index.html'){
+    const isHomePage = document.querySelector('.isHomePage');
+    if(document.contains(isHomePage)){
         if(window.scrollY > 100){
             header.classList.add('sticky');
         } else {
@@ -61,6 +62,7 @@ trashBin.addEventListener('drop', e => {
     noneDropF.style.display = 'none';
     noneDropS.style.display = 'none';
     ringLoading.style.display = 'block';
+    document.querySelector('.box-trash').style.backgroundColor = '#061a3a';
     setTimeout(() => {
         ringLoading.style.display = 'none';
         dropDoneMess.style.display = 'block'

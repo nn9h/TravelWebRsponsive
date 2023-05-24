@@ -65,6 +65,7 @@ body {
   margin-top: 40px;
   padding: 10px;
   display: none;
+  color: var(--main-color);
 }
 
 #loader .box-trash .img-box img {
@@ -1073,6 +1074,10 @@ footer .col-4 .informations span {
 }
 
 @media screen and (max-width: 902px){
+  * {
+    cursor: none !important;
+  }
+
   .header_container {
     padding: 6px 30px;
   }
