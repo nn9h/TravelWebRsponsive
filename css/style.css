@@ -226,6 +226,7 @@ header .icon {
   cursor: pointer;
   transition: 0.3s;
   color: var(--sub-color);
+  position: relative;
 }
 
 header .icon:hover {
@@ -234,6 +235,14 @@ header .icon:hover {
 
 header .icon:hover i {
   transition: 0.3s;
+}
+
+header .icon.user-icon.active {
+  background-color: var(--secondary-color);
+}
+
+header .icon.user-icon i.active {
+  color: var(--main-color);
 }
 
 header .icon:hover > i {

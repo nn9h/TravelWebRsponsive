@@ -40,6 +40,12 @@ document.addEventListener('click', function(event) {
     }
 });
 
+// Login icon click
+const iconUser = document.querySelector('header .user-icon');
+iconUser.onclick = function(){
+    location.href = 'login.html';
+}
+
 // Drag / Drop Desktop screen
 const trashItem = document.querySelector('#trash');
 const trashBin = document.querySelector('.trash-bin-box');
@@ -48,7 +54,6 @@ const noneDropS = document.querySelector('.box-trash h4');
 const ringLoading = document.querySelector('.lds-ring');
 const dropDoneMess = document.querySelector('.box-trash h3');
 const loaderWr = document.querySelector('#loader');
-
 trashBin.addEventListener('dragover', function(e){
     e.preventDefault();
 })
@@ -77,6 +82,7 @@ const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
 if (isTouchDevice) {
     loaderWr.style.display = 'none';
 }
+
 
 
 
