@@ -168,6 +168,7 @@ header .nav_header .x-icon {
 header .logo img {
   width: 140px;
   height: 28px;
+  cursor: pointer;
 }
 
 header .nav_text {

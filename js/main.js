@@ -21,6 +21,11 @@ searchBox.onclick = function(e){
     e.stopPropagation();
 }
 
+// Click on logo
+document.querySelector('.header_wr .logo').addEventListener('click', () => {
+    location.href = 'index.html'
+})
+
 
 // Toggle menu
 const menuBtn = document.querySelector('.menu_icon');
